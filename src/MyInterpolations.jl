@@ -1,5 +1,5 @@
 module MyInterpolations
-function my_lin_interp(grid::Float64, vals::Float64)
+function my_lin_interp(grid, vals)
     function func(x::Real)
         if x < grid[1]
             print("error")
@@ -9,7 +9,6 @@ function my_lin_interp(grid::Float64, vals::Float64)
         end
         if grid[1] <= x <= grid[end]
         i = searchsortedfirst(grid, x)
-        x in grid[i-1]:grid[i]
         return vals[i-1] + (vals[i]-vals[i-1])*(x - grid[i-1])/(grid[i] - grid[i-1])
         end
     end
