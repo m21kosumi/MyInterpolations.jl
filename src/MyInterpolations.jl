@@ -1,5 +1,5 @@
 module MyInterpolations
-function my_lin_interp(grid::Array, vals::Array)
+function my_lin_interp(grid::Float64, vals::Float64)
     function func(x::Real)
         if x < grid[1]
             print("error")
