@@ -1,6 +1,6 @@
 module MyInterpolations
-function my_lin_interp(grid, vals)
-    function func(x)
+function my_lin_interp(grid::Array, vals::Array)
+    function func(x::Real)
         if x < grid[1]
             print("error")
         end
